@@ -1,0 +1,13 @@
+:root {
+    --ross-text-color:#050505;
+    --ross-background-color:#fff;
+    --ross-background-color-secondary:#efeff0;
+    --ross-border-color:#e3e3e3;
+    --ross-blue-light:#aeaeec;
+    --ross-blue-medium:#9393f4;
+    --ross-blue-dark:#1d1d57;
+    --ross-blue-dark-rgb:29, 29, 87;
+    --ross-light-grey:#efeff0;
+    --ross-medium-grey:#e3e3e3;
+    --ross-dark-grey:#aeaeae;
+}
