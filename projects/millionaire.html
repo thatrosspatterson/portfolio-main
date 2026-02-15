@@ -76,7 +76,7 @@
             <section>
                 <article>
                     <h2>My Basic Requirements</h2>
-                    <p>Before I fully-commited to building this as a larger project, I had some basic criteria I wanted to meet when building a skeleton version.</p>
+                    <p>Before I fully-committed to building this as a larger project, I had some basic criteria I wanted to meet when building a skeleton version.</p>
                     <ul>
                         <li>Prove it is possible to sync music and audio queues to questions and the status of the game. I felt music was important as without it the experience would not be the same.</li>
                         <li>Prove it is possible to link together two different browsing contexts to have a "controls" screen and a "player" screen. The actual game has a host-player experience, so two screens would be necessary.</li>
@@ -129,13 +129,13 @@
                     <div class="project-info-container">
                         <div>
                             <h3>Revised Question Format and Music Management</h3>
-                            <p>To resolve the ineffectiveness of my initial music managment, I refactored the all the audio functions and where the music files where defined.</p>
+                            <p>To resolve the ineffectiveness of my initial music management, I refactored the all the audio functions and where the music files where defined.</p>
                             <p>As each question has its own music, I realised these could be quite efficiently defined in the same place as the questions themselves, and the function could index into this object to retrieve each audio object as the game progressed. This would also help with the customisation of quiz lengths later on, if you wanted more or less than 15 questions.</p>
                         </div>
                         <div>
                             <figure>
-                                <img src="../res/img/millionaire-demo-4.jpg" width="100%" alt="Revised quiz format and music mangament"/>
-                                <figcaption>Revised quiz format and music mangament</figcaption>
+                                <img src="../res/img/millionaire-demo-4.jpg" width="100%" alt="Revised quiz format and music management"/>
+                                <figcaption>Revised quiz format and music management</figcaption>
                             </figure>  
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                             <h3>Establishing the second screen</h3>
                             <p>As part of my criteria I always intended on having a second screen, which would be for the player, whilst the existing one would be for the host and person controlling the game.</p>
                             <p>Despite initially intending to reuse the layout of the existing host screen, I realised this would be an ineffective choice for two reasons. One, the player screen would not have controls and statistics, resulting in wasted space. Two, my host screen was modelled off the actual TV show overlays. I came to see this was impractical and illogical for the intended use of the project, as I would only ever display the questions, lifelines and money tree on screen.</p>
-                            <p>I revised the layout by increasing the question block to full width, which would be useful for longer questions and readability, and re-draw the money tree as a floating box, rather than a side module. I would do the same with the lifeines, which also allowed space for a logo.</p>
+                            <p>I revised the layout by increasing the question block to full width, which would be useful for longer questions and readability, and re-draw the money tree as a floating box, rather than a side module. I would do the same with the lifelines, which also allowed space for a logo.</p>
                         </div>
                         <div>
                             <figure>
@@ -203,7 +203,7 @@
                     <p>I made many changes improvements to the project, some of which focused on backend functionality and others that were focused on the experience.</p>
                     <ul>
                         <li>I refactored GUI functions to create or modify content on screen to shared JavaScript file which would be used by both screens. A helper method would be called on the Host Screen, which would run the function for the Host Screen, and also broadcast a message to the Player Screen to tell it to run it too.</li>
-                        <li>I unfixed the number of options for each question away from four. This allows for true/false questions or three option questions for when writing quizzes. Theortically the number is unlimited, but only six elements can fit on screen. This change had lots of trickle on effects, such Lifeline being able to handle varying option lengths.</li>
+                        <li>I unfixed the number of options for each question away from four. This allows for true/false questions or three option questions for when writing quizzes. Theoretically the number is unlimited, but only six elements can fit on screen. This change had lots of trickle on effects, such Lifeline being able to handle varying option lengths.</li>
                         <li>The responsiveness of the webpages was changed to be based off the vertical window space. Prior to this, some elements were at fixed size, while others (including text) were scaled by JavaScript. This solved things like overlapping and misaligned elements across different screen resolutions and aspect ratios.</li>
                     </ul>
                 </article>
@@ -214,7 +214,7 @@
                             <h3>Lifeline Expansion</h3>
                             <p>Throughout the development I added a total of six lifelines, plus the ability to set "safety nets" or "milestones" on the money tree during the game. These lifelines included "50:50", "Phone a Friend", "Ask the Audience", "Ask the Host", "Double Dip" and "Switch". </p>
                             <p>Lifelines that depended on human interaction such as Phone a Friend and Ask the Host were quite basic implementations. For Ask the Audience, I included to options, a way to input a headcount which would convert votes into percentages, and a computer generated random result, which would bias the correct answer, but less so the further the player progressed.</p>
-                            <p>I would later change how lifelines were assigned in the quiz format. Initially, they were fixed and the settings for them were indepdent of the quiz questions loaded into the game. By changing this, different quizzes could choose how many lifelines were available, and any number of lifelines could be granted before each question loaded, and repeatedly for the same ones.</p>
+                            <p>I would later change how lifelines were assigned in the quiz format. Initially, they were fixed and the settings for them were independent of the quiz questions loaded into the game. By changing this, different quizzes could choose how many lifelines were available, and any number of lifelines could be granted before each question loaded, and repeatedly for the same ones.</p>
                         </div>
                         <div>
                             <figure>
@@ -230,7 +230,7 @@
                     <p>I evolved the question rotation logic of the quiz many times. Initially, only one question could be assigned to each question in the money tree. For example, for a 15 question length quiz, there would only be 15 questions.</p>
                     <p>To have multiple rounds at a time without swapping out the question file, I changed this so multiple questions could be assigned to each question on the money tree (I called these "sub questions" internally to differentiate from the question length of the quiz). When starting a question on the money tree, a random (sub) question of those available for that question would be selected. That specific (sub) question could not be used again until all available (sub) questions were used, or the page was refreshed/reloaded.</p>
                     <p>This was largely effective at producing variated back-to-back rounds provided enough questions were created. However, it became problematic when questions of the same topic were rolled one after the other. To maintain random selection whilst reducing this annoyance, I added question categories.</p>
-                    <p>The final question rotation logic worked as follows: when rolling the next question, questions of unseen categories would be priortised and chosen at random. If no new categories were left, it would choose a random question of those unseen, but ignoring categories. If all questions had been seen, the pool of (sub) questions for the question would be reset. </p>
+                    <p>The final question rotation logic worked as follows: when rolling the next question, questions of unseen categories would be prioritised and chosen at random. If no new categories were left, it would choose a random question of those unseen, but ignoring categories. If all questions had been seen, the pool of (sub) questions for the question would be reset. </p>
                 </article>
 
                 <article>
@@ -251,7 +251,7 @@
             <section>
                 <article>
                     <h2>Retrospective</h2>
-                    <p>This was an enjoyable explorative project. Whilst it certianly could be improved in many ways, I was quite happy with the end result. If I were to expand on the project, some things I would consider doing would be:</p>
+                    <p>This was an enjoyable explorative project. Whilst it certainly could be improved in many ways, I was quite happy with the end result. If I were to expand on the project, some things I would consider doing would be:</p>
                     <ul>
                         <li>Run the project through a webserver so that actual JSON files could be used to store quiz data rather than using a JavaScript object in a js file. This would help polish the format. The loading of quizzes could be done in a GUI, rather than manually editing the import statements.</li>
                         <li>Include more checks and tests for potential errors, particularly where the quiz questions may not be formatted correctly or have missing data. There are lots of edge cases that could probably break the project.</li>
